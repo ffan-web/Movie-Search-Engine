@@ -1,0 +1,6 @@
+{
+    "solrCoreName": "myimdb",
+    "solrHost": "localhost",
+    "solrPort": 8983,
+    "solrProtocol": "http"
+}
