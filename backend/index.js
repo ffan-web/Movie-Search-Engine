@@ -2,6 +2,7 @@ const express = require("express");
 const app = express();
 
 const search = require('./routes/search');
+const movie = require('./routes/movie');
 
 const port = process.env.PORT || 3000;
 const server = app.listen(port, () => {
@@ -14,3 +15,4 @@ app.get("/", (req, res) => {
 });
 
 search(app);
+movie(app);
