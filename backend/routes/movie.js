@@ -37,7 +37,7 @@ function search_movie(req, res) {
         console.log('genre: ' + genre);
 
         // Search for movies with the same genre
-        var genre_StrQuery = 'q=genres:"' + genre + '"'+'&sort=imDbRating desc'+'&wt=json';
+        var genre_StrQuery = 'q=genres:"' + genre + '"'+'&sort=imDbRatingVotes desc'+'&wt=json';
 
         solrClient.search(genre_StrQuery, function (err, recommendations) {
             if (err) {

@@ -38,7 +38,7 @@ function search_actor(req, res) {
         //console.log('name: ' + name, priname);
 
         // Search for movies with the same genre
-        var actor_StrQuery = 'q=stars:"' + name + '"'+'OR stars:"'+priname+'"&sort=imDbRating desc'+'&wt=json';
+        var actor_StrQuery = 'q=stars:"' + name + '"'+'OR stars:"'+priname+'"&sort=imDbRatingVotes desc'+'&wt=json';
         //console.log(actor_StrQuery)
         solrClient.search(actor_StrQuery, function (err, recommendations) {
             if (err) {
@@ -61,7 +61,7 @@ function search_actor(req, res) {
                 //console.log('genre: ' + genre);
 
                 // Search for movies with the same genre
-                var genre_StrQuery = 'q=genres:"' + genre + '"'+'&sort=imDbRating desc'+'&wt=json';
+                var genre_StrQuery = 'q=genres:"' + genre + '"'+'&sort=imDbRatingVotes desc'+'&wt=json';
 
                 solrClient.search(genre_StrQuery, function (err, recommendations2) {
                     if (err) {

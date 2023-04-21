@@ -30,7 +30,7 @@ function search_all(req, res) {
 }
 function search_keyword(req, res){
     var keyword_movie = req.params.keyword;
-    var myStrQuery = 'q=title:"' + keyword_movie +'"&wt=json';
+    var myStrQuery = 'q=title:"' + keyword_movie +'"&sort=imDbRatingVotes desc&wt=json';
 
     solrClient.search(myStrQuery, function (err, result) {
         if (err) {
