@@ -1,14 +1,14 @@
-import React from 'react';
-import TextField from '@material-ui/core/TextField';
-import Button from '@material-ui/core/Button';
-import { FaImdb } from 'react-icons/fa';
+import React from "react";
+import TextField from "@material-ui/core/TextField";
+import Button from "@material-ui/core/Button";
+import { FaColumns, FaImdb } from "react-icons/fa";
 
 class SearchPage extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      searchTerm: '',
+      searchTerm: "",
     };
 
     this.handleInputChange = this.handleInputChange.bind(this);
@@ -28,18 +28,54 @@ class SearchPage extends React.Component {
 
   render() {
     return (
-      <div className="search-page" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', height: '100vh' }}>
-        <h1 style={{ marginBottom: '32px' }}><FaImdb style={{ marginRight: '16px', fontSize: '48px', verticalAlign: 'middle' }} />Search IMDb</h1>
-        <form onSubmit={this.handleSearch} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-          <TextField
-            label="Search for a movie or TV show..."
-            variant="outlined"
-            size="small"
-            value={this.state.searchTerm}
-            onChange={this.handleInputChange}
-            style={{ marginBottom: '16px', fontSize: '24px', padding: '24px' }}
+      <div
+        className="search-page"
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          justifyContent: "center",
+          height: "100vh",
+        }}
+      >
+        <h1 style={{ marginBottom: "32px", color: "gray" }}>
+          <FaImdb
+            style={{
+              marginRight: "16px",
+              fontSize: "48px",
+              verticalAlign: "middle",
+              color: "#F6C700",
+            }}
           />
-          <Button variant="contained" color="primary" type="submit" style={{ minWidth: '80px', height: '36px' }}>Search</Button>
+          Search IMDb
+        </h1>
+
+        <p
+          style={{
+            color: "gray",
+            fontSize: "16px",
+            marginBottom: "16px",
+            padding: "0 16px",
+          }}
+        >
+          Search for a movie, TV show, or person.
+        </p>
+        <form
+          onSubmit={this.handleSearch}
+          class="d-flex ms-3"
+          style={{ width: "40%" }}
+        >
+          <input
+            class="form-control me-2 border-0 text-white"
+            text="Search"
+            aria-label="Search"
+            onChange={this.handleInputChange}
+            style={{ backgroundColor: "#333333" }}
+          />
+          {/* buttom outline yellow */}
+          <button class="btn btn-outline-warning" type="submit">
+            Search
+          </button>
         </form>
       </div>
     );

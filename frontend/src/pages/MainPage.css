@@ -1,0 +1,34 @@
+/* Path: frontend/src/pages/MainPage.css */
+body {
+  background-color: #19191a;
+}
+
+.actor-image-container {
+  width: 80px;
+  height: 80px;
+  overflow: hidden;
+  border-radius: 50%;
+}
+
+.actor-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.movie-image-container {
+  width: 90px;
+  height: 120px;
+  overflow: hidden;
+}
+
+.list-box{
+  background-color: #e0e0e0;
+}
+/* when hover on the list-box, change backgroudcolor to white */
+.list-box:hover {
+  background-color: #fff;
+
+  /* when hover on the list-box, change the color of the text to black */
+  color: #F6C700;
+}
